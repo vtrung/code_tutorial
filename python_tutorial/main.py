@@ -1,43 +1,36 @@
-## make sure to use python 3 and up
-## <-- how to comment
+from library import utilities
+## importing a library. make sure you put an empty __init__.py file in library folder or python may not detect it
 
-## print anything words
-print("Put anything here an you can write to console")
+## better to use functions
+def func_1():
+    print("we are in function 1")
+    print("do anything contained in function when called")
 
-## variables
-num1 = 10
-num2 = 25
-words = "this is some words"
+def anyname():
+    print("name functions anyname but has to start with a letter")
 
-## print variables
-## converting num1 to a string because you can't combine a string with a number
-print(words + " " + str(num1))
-print(words + " " + str(num2))
+def process_input(num1, num2):
+    # this is a try/catch. useful if something can go wrong. in this case if someone doesn't pass in numbers
+    try:
+        # you can define a function with input like this
+        print("{} + {} = {}".format(num1, num2, num1 + num2))
+    except Exception as e:
+        print("Something was wrong with your code so it threw an exception")
+        print(str(e))
+    
+if __name__ == "__main__":
+    # "if __name__ == "__main__" is how python know what to run if you call it. especially if it is just functions
+    # useful or makes more sense later on when you create your own library w/o anything to run
+    print("we are starting the run here")
 
-## add numbers
-num3 = num1 + num2
+    # calling functions
+    func_1()
+    anyname()
 
-## string formatting
-formatted = "{} + {} = {}".format(num1, num2, num3)
-print(formatted)
+    process_input(1, 4)
+    process_input(100, 40)
+    process_input(2, "ok")
 
-## if statements
-if num1 >= 9:
-    print("{} is greater than or equal to 9".format(num1))
-else:
-    print("it is not equal. this is the else statement")
-
-
-## loops
-for i in range(5):
-    print("looping")
-    print(i)
-
-
-## another way to loop. google them if you need
-fruits = ["apple", "banana", "cherry"]
-for x in fruits:
-  print(x)
-  if x == "banana":
-    break
-
+    # using a library
+    name = utilities.uppercase_name("ving")
+    print(name)
