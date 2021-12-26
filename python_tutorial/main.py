@@ -22,6 +22,7 @@ if __name__ == "__main__":
     # "if __name__ == "__main__" is how python know what to run if you call it. especially if it is just functions
     # useful or makes more sense later on when you create your own library w/o anything to run
     print("we are starting the run here")
+    print("new line")
 
     # calling functions
     func_1()
